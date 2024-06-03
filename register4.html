@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - ProgrammingBlock.IO</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+            background: #54C373;
+            position: relative;
+        }
+        .header {
+            position: relative;
+            width: 100%;
+            height: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #83CFFA;
+            z-index: 1;
+        }
+        .header .decorative-block {
+            position: absolute;
+            background: #83CFFA;
+        }
+        .block1 {
+            width: 200px;
+            height: 90px;
+            left: -10px;
+            top: -20px;
+        }
+        .block2 {
+            width: 200px;
+            height: 90px;
+            left: 250px;
+            top: -20px;
+        }
+        .block3 {
+            width: 200px;
+            height: 90px;
+            left: 490px;
+            top: -20px;
+        }
+        .block4 {
+            width: 200px;
+            height: 90px;
+            left: 730px;
+            top: -20px;
+        }
+        .title {
+            position: relative;
+            z-index: 1;
+            color: #030303;
+            font-size: 2rem;
+            font-weight: 900;
+            bottom: 7px;
+        }
+        .container {
+            width: 80%;
+            max-width: 350px;
+            background: rgba(215, 255, 214, 0.5);
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0, 1, 1, 1);
+            text-align: center;
+            position: absolute;
+            top: 150px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .register-title {
+            font-size: 1.5rem;
+            font-weight: 900;
+            margin-bottom: 10px;
+            color: #030303;
+        }
+        .input-group {
+            margin: 10px 0;
+            text-align: left;
+        }
+        .input-group label {
+            display: block;
+            font-size: 1rem;
+            font-style: italic;
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+        .input-group input {
+            width: calc(100% - 20px);
+            padding: 8px;
+            font-size: 0.9rem;
+            border-radius: 8px;
+            border: 2px solid black;
+            outline: none;
+        }
+        .input-group input::placeholder {
+            color: rgba(0, 0, 0, 0.5);
+            font-style: italic;
+        }
+        .submit-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #87E2FF;
+            border: 2px solid black;
+            border-radius: 12px;
+            font-size: 1.2rem;
+            font-style: italic;
+            font-weight: 500;
+            color: black;
+            cursor: pointer;
+            text-align: center;
+            margin-top: 15px;
+        }
+        .ok-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #00922c;
+            border: 2px solid black;
+            border-radius: 12px;
+            font-size: 1.2rem;
+            font-style: italic;
+            font-weight: 500;
+            color: black;
+            cursor: pointer;
+            text-align: center;
+            margin-top: 15px;
+        }
+        .ok-button2 {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #00922c;
+            border: 2px solid black;
+            border-radius: 12px;
+            font-size: 1.2rem;
+            font-style: italic;
+            font-weight: 500;
+            color: black;
+            cursor: pointer;
+            text-align: center;
+            margin-top: 15px;
+        }
+        .register-link {
+            display: block;
+            margin-top: 15px;
+            font-size: 0.9rem;
+            font-weight: 800;
+            color: #0248B1;
+            text-decoration: none;
+        }
+        .info-box {
+            width: 80%;
+            max-width: 300px;
+            background: #D9D9D9;
+            border-radius: 8px;
+            padding: 8px;
+            margin-top: 15px;
+            margin-left: 25px;
+            position: relative;
+            font-size: 0.8rem;
+        }
+        .info-box p {
+            margin: 0;
+            color: black;
+        }
+        #notification {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60%;
+            max-width: 400px;
+            height: auto;
+            background: white;
+            border-radius: 12px;
+            border: 2px black solid;
+            padding: 20px;
+            text-align: center;
+            z-index: 9999;
+        }
+        #notification .Rectangle16 {
+            display: none;
+        }
+        #fail {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60%;
+            max-width: 400px;
+            height: auto;
+            background: white;
+            border-radius: 12px;
+            border: 2px black solid;
+            padding: 20px;
+            text-align: center;
+            z-index: 9999;
+        }
+        #fail .Rectangle16 {
+            display: none;
+        }
+        #overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.66);
+            z-index: 999;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="decorative-block block1"></div>
+        <div class="decorative-block block2"></div>
+        <div class="decorative-block block3"></div>
+        <div class="decorative-block block4"></div>
+        <div class="title">Register</div>
+    </div>
+
+    <div class="container">
+        <div class="input-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Input Your Password">
+        </div>
+        <div class="info-box">
+            <p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+        <div class="submit-button" id="submit-button">Submit</div>
+    </div>
+
+    <div id="overlay"></div>
+
+    <div id="notification">
+        <div class="WelcomeUsername">Welcome, [username]</div>
+        <div class="ok-button" id="ok-button">OK</div>
+    </div>
+
+    <div id="fail">
+        <div class="WelcomeUsername">Sorry, there is the same data in the database </div>
+        <div class="ok-button2" id="ok-button2">OK</div>
+    </div>
+
+    <script>
+        document.getElementById('submit-button').addEventListener('click', function() {
+            const email = localStorage.getItem('email');
+            const username = localStorage.getItem('username');
+            const role = localStorage.getItem('role');
+            const password = document.getElementById('password').value;
+
+            const formData = new FormData();
+            formData.append('email', email);
+            formData.append('username', username);
+            formData.append('role', role);
+            formData.append('password', password);
+
+            fetch('register.php', {
+                method: 'POST',
+                body: formData
+            }).then(response => {
+                if (response.ok) {
+                    return response.json();
+                } else {
+                    throw new Error('Failed to register');
+                }
+            }).then(data => {
+                // Handle success
+                alert(data.message); // Display the registration message
+                document.querySelector('.WelcomeUsername').innerText = `Welcome, ${username}`;
+                document.getElementById('notification').style.display = 'block';
+                document.getElementById('overlay').style.display = 'block';
+            }).catch(error => {
+                // Handle error
+                console.error(error);
+                document.getElementById('fail').style.display = 'block'; // Display the failure message
+                document.getElementById('overlay').style.display = 'block';
+            });
+        });
+
+        document.getElementById('ok-button').addEventListener('click', function() {
+            window.location.href = 'login.html'; // Redirect to menu.php
+        });
+
+        document.getElementById('ok-button2').addEventListener('click', function() {
+            window.location.href = 'login.html'; // Redirect to login.php
+        });
+    </script>
+    
+</body>
+</html>

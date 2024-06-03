@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaderboard - ProgrammingBlock.IO</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+            background: #54C373;
+            position: relative;
+        }
+        .header {
+            position: relative;
+            width: 100%;
+            height: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #83CFFA;
+            z-index: 1;
+        }
+        .header .decorative-block {
+            position: absolute;
+            background: #83CFFA;
+        }
+        .block1 {
+            width: 200px;
+            height: 90px;
+            left: -10px;
+            top: -20px;
+        }
+        .block2 {
+            width: 200px;
+            height: 90px;
+            left: 250px;
+            top: -20px;
+        }
+        .block3 {
+            width: 200px;
+            height: 90px;
+            left: 490px;
+            top: -20px;
+        }
+        .block4 {
+            width: 200px;
+            height: 90px;
+            left: 730px;
+            top: -20px;
+        }
+        .title {
+            position: relative;
+            z-index: 1;
+            color: #030303;
+            font-size: 2rem;
+            font-weight: 900;
+            bottom: 7px;
+        }
+        .Rectangle16 {
+            width: 1098px;
+            height: 693px;
+            left: 176px;
+            top: 180px;
+            position: absolute;
+            background: white;
+            border-radius: 12px;
+            border: 2px black solid;
+        }
+        .Rectangle22 {
+            width: 387px;
+            height: 99px;
+            left: 887px;
+            top: 180px;
+            position: absolute;
+            background: #FFF0F0;
+            border-radius: 12px;
+            border: 2px black solid;
+        }
+        .Rectangle21 {
+            width: 387px;
+            height: 99px;
+            left: 531px;
+            top: 180px;
+            position: absolute;
+            background: #FFF0F0;
+            border-radius: 12px;
+            border: 2px black solid;
+        }
+        .Rectangle20 {
+            width: 387px;
+            height: 99px;
+            left: 176px;
+            top: 180px;
+            position: absolute;
+            background: #969494;
+            border-radius: 12px;
+            border: 2px black solid;
+        }
+        .Vector {
+            width: 39px;
+            height: 51px;
+            left: 1216px;
+            top: 204px;
+            position: absolute;
+            background: black;
+        }
+        .Stage1,
+        .Stage2,
+        .Stage3 {
+            position: absolute;
+            font-size: 30px;
+            font-family: Inter;
+            font-weight: 900;
+            color: black;
+            white-space: nowrap; /* Prevent text from wrapping */
+        }
+
+        .Stage1 {
+            left: 318px;
+            top: 212px;
+        }
+
+        .Stage2 {
+            left: 670px;
+            top: 212px;
+        }
+
+        .Stage3 {
+            left: 1033px;
+            top: 212px;
+        }
+
+        .Group21 {
+            width: 176.50px;
+            height: 63px;
+            left: 46px;
+            top: 915px;
+            position: absolute;
+        }
+        .Back {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            color: black; /* Text color */
+            background-color: #C354A4; /* Button background color */
+            border: 2px solid black; /* Border color */
+            padding: 10px 20px; /* Padding for button */
+            font-size: 24px;
+            font-family: Inter;
+            font-weight: 400;
+            word-wrap: break-word;
+            z-index: 2; /* Ensure the button is above other elements */
+            cursor: pointer; /* Change cursor to pointer on hover */
+            border-radius: 10px; /* Rounded corners */
+        }
+        .LeaderboardContainer {
+            position: absolute;
+            top: 20%;
+            left: 18%;
+            transform: translate(-50%, -50%) scale(0.566); /* Center the container and scale it down */
+            transform-origin: left; /* Set the origin of the transformation to the top left corner */
+        }
+
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="decorative-block block1"></div>
+        <div class="decorative-block block2"></div>
+        <div class="decorative-block block3"></div>
+        <div class="decorative-block block4"></div>
+        <div class="title">Leaderboard</div>
+    </div>
+
+    <div class="LeaderboardContainer">
+        <div class="LeaderboardContent">
+            <div class="Rectangle16"></div>
+            <div class="Rectangle22"></div>
+            <div class="Rectangle21"></div>
+            <div class="Rectangle20"></div>
+            <div class="Vector"></div>
+            <div class="Stage1">Stage 1</div>
+            <div class="Stage2">Stage 2</div>
+            <div class="Stage3">Stage 3</div>
+            <div class="Group21">
+                <div class="Rectangle4"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="back" class="Back">Back</div>
+    <script>
+        document.getElementById('back').addEventListener('click', function() {
+        window.location.href = 'lobbyGuru.php';
+    });
+    </script>
+</body>
+</html>
